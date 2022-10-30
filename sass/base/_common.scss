@@ -1,0 +1,16 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+.header-container,
+.container {
+  max-width: 1200px;
+  margin: -1px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.link.current {
+  position: relative;
+  color: var(--hover-color);
+}
