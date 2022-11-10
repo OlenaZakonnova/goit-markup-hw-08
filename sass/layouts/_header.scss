@@ -2,16 +2,28 @@
   border: 1px solid #ececec;
 }
 
-header > .header-container {
+.header-container {
+  padding-top: 16px;
+  padding-bottom: 16px;
   display: flex;
   align-items: center;
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @include desktop {
+  }
 }
 .navigation {
-  display: flex;
-  align-items: center;
+  display: none;
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
   &__list {
     display: flex;
     gap: 50px;
+    margin-left: 93px;
   }
 
   &__list:first-child {
@@ -43,7 +55,7 @@ header > .header-container {
 }
 .current::after {
   position: absolute;
-  display: block;
+  display: flex;
   content: "";
   bottom: 0;
   left: 0;
@@ -51,23 +63,48 @@ header > .header-container {
   height: 4px;
   background: var(--hover-color);
   border-radius: 2px;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    top: 108%;
+  }
 }
 .header-contacts {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  padding: 21px 0;
   display: flex;
-  gap: 50px;
   margin-left: auto;
+  gap: 10px;
+  align-items: baseline;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-direction: column;
+    @media screen and (min-width: 1200px) {
+      gap: 30px;
+    }
+  }
+  &__list {
+    @include tablet {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include desktop {
+      margin-right: 50px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
   &__link {
-    display: flex;
     gap: 10px;
+    display: block;
     justify-content: center;
     align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-
     color: var(--p-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
@@ -79,6 +116,7 @@ header > .header-container {
     }
   }
   &__icon {
+    margin-right: 10px;
     fill: currentColor;
     transition: fill var(--transition-duration) var(--cubic-bazier);
     &:hover,
@@ -87,3 +125,136 @@ header > .header-container {
     }
   }
 }
+.menu-open-button {
+  margin-left: auto;
+  background-color: transparent;
+  border-color: transparent;
+  @include tablet {
+    display: none;
+  }
+}
+.mobile-menu {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color:var(--main-bg-color);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 48px 40px;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:var(--transition-duration) var(--cubic-bazier);
+}
+
+.mobile-menu > .mobile-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow:auto;
+}
+
+.mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: visible;
+    visibility: visible;
+    transform:translateX(0);
+}
+
+.menu-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border:none;
+  }
+    .menu-close-button:hover, 
+    .menu-close-button:focus {
+      fill:var(--hover-color);
+    }
+.mobile-navigation{
+&__item:not(:last-child) {
+  margin-bottom:32px;
+}
+
+&__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: .02em;
+  color:var(--main-text-color);
+&:hover,
+&:focus {
+    color:var(--hover-color);
+}
+}
+}
+.mobile-navigation__link--current {
+    position: relative;
+    color:var(--hover-color);
+}
+
+.mobile-contacts {
+    margin-bottom:64px;
+&__item:not(:last-child) {
+    margin-bottom:32px;
+}
+
+&__link--tel {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.176;
+    letter-spacing: .02em;
+    color:var(--hover-color);
+    @media screen and (max-width:479px){
+font-size: 24px;
+    }
+      
+    
+}
+&__link--mail {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.167;
+    letter-spacing: .02em;
+    color:var(--p-color);
+}
+}
+.mobile-social {
+    display: flex;
+    justify-content: center;
+    
+&__list{
+  flex-wrap: wrap;
+    gap: 10px;
+}
+    &__item {
+      position:relative;
+    }
+    
+    &__item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background-color:rgba(33, 33, 33, .2);
+    }
+    
+    &__link {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.22;
+      letter-spacing: .02em;
+      color: var(--hover-color);
+      margin-right: 10px;
+      margin-left:10px;
+      @media screen and (max-width: 389px){
+    font-size: 10px;
+}
+    }
+  }

@@ -1,6 +1,10 @@
 .about {
-  padding-bottom: 94px;
-  padding-top: 47px;
+  display: none;
+  @include desktop {
+    display: block;
+    padding-bottom: 94px;
+    padding-top: 47px;
+  }
 
   &__title {
     margin-bottom: 50px;

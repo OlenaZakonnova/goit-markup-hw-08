@@ -8,11 +8,6 @@
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 300ms linear, visibility 300ms linear;
 }
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
 }
@@ -20,9 +15,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 40px 40px;
-  min-width: 528px;
-  min-height: 581px;
+  padding: 40px ;
+  width: 290px;
+  min-height: 560px;
   background-color: var(--main-bg-color);
 
   transform: translate(-50%, -50%) scale(1);
@@ -31,6 +26,14 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  @media  screen and (min-width:480px) {
+    width: 450px;
+    min-height: 609px;
+  }
+  @include desktop {
+    width: 528px;
+    min-height: 581px;
+  }
   &__title {
     font-weight: 700;
     font-size: 20px;
@@ -62,8 +65,14 @@
   }
 }
 .form {
-  width: 448px;
+  width: 212px;
   margin: 0 auto;
+  @media screen and (min-width:480px) {
+    width: 370px;
+  }
+  @include desktop{
+    width: 448px;
+  }
   &__field {
     position: relative;
     display: flex;
@@ -145,24 +154,18 @@ textarea {
   &__label {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    line-height: 2.71;
+    font-size: 12px;
+    line-height: 1.16;
     letter-spacing: 0.03em;
     color: var(--p-color);
     text-align: center;
+    @include desktop{
+      font-size: 14px;
+      line-height: 1.71;
+    }
   }
   &__input {
     appearance: none;
-    /* position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden; */
   }
   &__icon {
     display: inline-block;

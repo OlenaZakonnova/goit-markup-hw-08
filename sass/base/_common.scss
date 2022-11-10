@@ -3,14 +3,35 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
-.header-container,
+.header-container{
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .container {
-  max-width: 1200px;
-  margin: -1px auto;
+  width: 100%;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 .link.current {
   position: relative;
   color: var(--hover-color);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
