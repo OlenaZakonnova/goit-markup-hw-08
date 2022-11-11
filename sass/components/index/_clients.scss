@@ -1,6 +1,10 @@
 .clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include desktop{
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
   &__title {
     margin-bottom: 30px;
     font-weight: 700;
@@ -16,6 +20,7 @@
   }
   &__item {
     width: calc((100% - 30px) / 2);
+    height: 92px;
     @media screen and(max-width: 479px) {
       width: 100%;
     }
@@ -27,6 +32,8 @@
     }
   }
   &__link {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

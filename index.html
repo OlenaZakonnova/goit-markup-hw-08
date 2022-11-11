@@ -22,7 +22,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-container">
+      <div class="header-container container">
         <a href="/" class="logo-link link"
           ><span class="logo">Web</span>Studio</a
         >
@@ -47,15 +47,15 @@
           <li class="header-contacts__list">
             <a
               href="mailto:info@devstudio.com"
-              class="header-contacts__link link"
+              class="header-contacts__link  link"
             >
-              <svg width="16" height="12" class="header-contacts__icon">
+              <svg width="16" height="12" class="header-contacts__icon envelope">
                 <use href="./images/icons.svg#icon-envelope"></use></svg>info@devstudio.com
             </a>
           </li>
           <li class="header-contacts__list">
             <a href="tel:+380961111111" class="header-contacts__link link">
-              <svg width="10" height="16" class="header-contacts__icon">
+              <svg width="10" height="16" class="header-contacts__icon smartphone">
                 <use href="./images/icons.svg#icon-smartphone"></use></svg>+38 096 111 11 11
             </a>
           </li>
@@ -72,7 +72,7 @@
             <button class="menu-close-button" type="button" data-menu-close>
               <svg width="40" height="40">
                 <use
-                  href="./images/icons.svg#icon-close"
+                  href="./images/icons.svg#icon-close-menu"
                 ></use>
               </svg>
             </button>
@@ -203,34 +203,52 @@
             <ul class="about__list list">
               <li class="about__item">
                 <div class="about__container">
-                  <img
+                  <picture>
+                    <source 
+                    srcset="./images/programming.jpg 1x, 
+                    ./images/programming_desktop2x.jpg 2x"
+                    />
+                    <img
                     src="./images/programming.jpg"
                     alt="Програмування"
                     width="370"
                     height="294"
-                  />
-                  <p class="about__text">Десктопні додатки</p>
-                </div>
-              </li>
-              <li class="about__item">
-                <div class="about__container">
-                  <img
-                    src="./images/layout_development.jpg"
-                    alt="Розробка макету"
-                    width="370"
-                    height="294"
-                  />
+                    />
+                  </picture>
+                    <p class="about__text">Десктопні додатки</p>
+                  </div>
+                </li>
+                <li class="about__item">
+                  <div class="about__container">
+                    <picture>
+                      <source
+                      srcset="./images/layout_development.jpg 1x, 
+                      ./images/layout_development_desktop2x.jpg 2x"
+                      media="(min-width:1200px)"
+                      />
+                      <img
+                      src="./images/layout_development.jpg"
+                      alt="Розробка макету"
+                      width="370"
+                      height="294"
+                      />
+                    </picture>
                   <p class="about__text">Мобільні додатки</p>
                 </div>
               </li>
               <li class="about__item">
                 <div class="about__container">
-                  <img
-                    src="./images/color_matching.jpg"
+                  <picture>
+                    <source 
+                    srcset="./images/color_matching.jpg 1x,
+                     ./images/color_matching_desktop2x.jpg 2x"
+                     />
+                    <img
                     alt="Підбір палітри"
                     width="370"
                     height="294"
-                  />
+                    />
+                  </picture>
                   <p class="about__text">Дизайнерські рішення</p>
                 </div>
               </li>
@@ -608,7 +626,6 @@
     </main>
     <footer class="footer">
       <div class="container first-footer">
-        <div class="tablet-container">
           <div class="footer__container">
             <a href="/" class="footer__logo link"
             ><span class="logo">Web</span>Studio</a
@@ -672,7 +689,6 @@
               </li>
             </ul>
           </div>
-        </div>
         <div class="footer-input">
           <h3 class="footer-input__title">Підпишіться на розсилку</h3>
           <form class="footer-input__container">
@@ -702,9 +718,8 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <h3 class="modal__title">Залиште свої дані, ми вам передзвонимо</h3>
-
         <form class="form" name="signup-form" autocomplete="off">
+        <h3 class="modal__title">Залиште свої дані, ми вам передзвонимо</h3>
           <label class="form__field"
             >Імʼя
             <input class="form__input" type="text" name="name" id="name" />

@@ -5,15 +5,14 @@
     padding-bottom: 47px;
   }
   &__list {
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
     @include tablet {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
     }
   }
   &__item:not(last-child) {
     width: 100%;
-    margin-bottom: 30px;
     @include tablet {
       width: calc((100% - 30px) / 2);
     }
@@ -30,6 +29,7 @@
     align-items: center;
     background-color: var(--third-bg-color);
     border-radius: 4px;
+    margin-bottom: 30px;
     @include tablet {
       width: 354px;
     }
@@ -38,7 +38,6 @@
     }
   }
   &__title {
-    padding-top: 30px;
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 14px;
@@ -58,11 +57,11 @@
     @media screen and (min-width: 480px) {
       width: 450px;
     }
-  @include tablet {
-    width: 354px;
+    @include tablet {
+      width: 354px;
+    }
+    @include desktop {
+      width: 270px;
+    }
   }
-  @include desktop {
-    width: 270px;
-  }
-}
 }
